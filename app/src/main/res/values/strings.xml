@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">My Application</string>
+    <string name="namePerson">Name</string>
+    <string name="surnamePerson">Surname</string>
+    <string name="introText">" Please Enter The Following Information"</string>
+    <string name="submitInfo">SUBMIT</string>
+</resources>
