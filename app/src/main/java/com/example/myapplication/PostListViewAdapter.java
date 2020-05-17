@@ -1,0 +1,49 @@
+package com.example.myapplication;
+
+import android.content.Context;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.BaseAdapter;
+import android.widget.TextView;
+
+import java.util.List;
+
+public class PostListViewAdapter extends BaseAdapter {
+    private Context context;
+    private List<Post> postList;
+
+    public PostListViewAdapter(Context context, List<Post> postList) {
+        this.context = context;
+        this.postList = postList;
+    }
+
+
+    @Override
+    public int getCount() {
+        return postList.size();
+    }
+
+    @Override
+    public Object getItem(int position) {
+        return postList.get(position);
+    }
+
+    @Override
+    public long getItemId(int position) {
+        return postList.get(position).getId();
+    }
+
+    @Override
+    public View getView(int position, View convertView, ViewGroup parent) {
+        LayoutInflater inflater = LayoutInflater.from(context);
+        convertView = inflater.inflate(R.layout.post_list_view_item,parent, false);
+        Post post = postList.get(position);
+        TextView itemTitle = convertView.findViewById(R.id.item_title);
+        TextView itemBody = convertView.findViewById(R.id.item_body);
+
+        itemTitle.setText(post.getTitle());
+        itemBody.setText(post.getBody());
+        return convertView;
+    }
+}
