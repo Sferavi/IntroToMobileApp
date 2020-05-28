@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.myapplication">
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.example.myapplication"
+    tools:ignore="ExtraText">
 
+    <uses-permission android:name="android.permission.CALL_PHONE" />
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
@@ -11,7 +14,22 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ListOfMonumentsActivity"></activity>
+        <activity android:name=".EmergencyContactsActivity"
+            android:permission="android.permission.BIND_TELECOM_CONNECTION_SERVICE">
+            <intent-filter>
+                <action android:name="android.telecom.ConnectionService" />
+            </intent-filter></activity>
+        <activity android:name=".ListOfNatureSpotsActivity" />
+        <activity android:name=".ListOfCafesActivity" />
+        <activity android:name=".ListOfRestaurantsActivity" />
+        <activity android:name=".FeedbackActivity">
+        <intent-filter>
+            <action android:name="android.intent.action.SENDTO" />
+            <data android:scheme="mailto" />
+            <category android:name="android.intent.category.DEFAULT" />
+        </intent-filter>
+        </activity>
+        <activity android:name=".ListOfMonumentsActivity" />
         <activity android:name=".locationsSarajevoActivity" />
         <activity android:name=".homeScreenActivity" />
         <activity android:name=".MainActivity">
@@ -21,6 +39,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
 
         <meta-data
             android:name="preloaded_fonts"

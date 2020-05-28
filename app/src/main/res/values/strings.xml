@@ -11,4 +11,22 @@
     <string name="idRestaurants">Restaurants</string>
     <string name="idCafe">Cafes</string>
     <string name="idNature">Nature Spots</string>
+    <string name="feedbackMessage1">Was the app easy to use?</string>
+    <string name="radioButton1">Yes</string>
+    <string name="radioButton2">Fairly easy, could be easier</string>
+    <string name="radioButton3">No</string>
+    <string name="radioButton4">The hardest app I had to use</string>
+    <string name="feedbackMessage2">Would you use this app again?</string>
+    <string name="radioButton5">Yes</string>
+    <string name="radioButton6">Maybe</string>
+    <string name="radioButton7">No</string>
+    <string name="feedbackMessage3">Write us your thoughts on the app itself.</string>
+    <string name="writeHerePart">Write here</string>
+    <string name="writeHereText1">Write here</string>
+    <string name="feedbackButton">Send Feedback</string>
+    <string name="emergencyContactsText">Emergency Contacts For Sarajevo</string>
+    <string name="emergencyContactsText2">Only Call In Emergency Situations!</string>
+    <string name="policeContact">Police</string>
+    <string name="ambulanceContacts">Ambulance</string>
+    <string name="firefighterContacts">Firefighters</string>
 </resources>

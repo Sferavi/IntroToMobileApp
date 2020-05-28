@@ -32,6 +32,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:backgroundTint="@android:color/holo_red_dark"
+            android:onClick="openEmergencyContacts"
             android:text="@string/emergencyNumbers" />
 
         <Button
@@ -39,6 +40,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:backgroundTint="@color/colorAccent"
+            android:onClick="openFeedback"
             android:text="@string/feedback" />
     </LinearLayout>
 

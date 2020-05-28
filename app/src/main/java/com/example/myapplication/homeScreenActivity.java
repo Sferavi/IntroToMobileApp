@@ -15,7 +15,17 @@ public class homeScreenActivity extends AppCompatActivity {
     }
     public void openLocationsSarajevo (View view){
 
-        Intent startLocationsSarajevo = new Intent(this,locationsSarajevoActivity.class);
-        startActivity(startLocationsSarajevo);
+        Intent startlocationsSarajevoActivity = new Intent(this,locationsSarajevoActivity.class);
+        startActivity(startlocationsSarajevoActivity);
+    }
+    public void openFeedback (View view){
+
+        Intent startFeedbackActivity = new Intent(this,FeedbackActivity.class);
+        startActivity(startFeedbackActivity);
+    }
+    public void openEmergencyContacts (View view){
+
+        Intent startEmergencyContactsActivity = new Intent(this,EmergencyContactsActivity.class);
+        startActivity(startEmergencyContactsActivity);
     }
 }

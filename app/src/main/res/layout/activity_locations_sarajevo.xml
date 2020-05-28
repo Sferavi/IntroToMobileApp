@@ -69,9 +69,9 @@
         android:id="@+id/imageView5"
         android:layout_width="133dp"
         android:layout_height="71dp"
-        android:onClick = "openLocationsSarajevo"
         android:layout_marginStart="8dp"
         android:layout_marginTop="32dp"
+        android:onClick="openMonuments"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView"
         app:srcCompat="@mipmap/sebiljresize" />
@@ -82,6 +82,7 @@
         android:layout_height="71dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="24dp"
+        android:onClick="openRestaurants"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView5"
         app:srcCompat="@mipmap/kiberesize" />
@@ -92,6 +93,7 @@
         android:layout_height="71dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="24dp"
+        android:onClick="openCafes"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView7"
         app:srcCompat="@mipmap/kafaresize" />
@@ -102,6 +104,7 @@
         android:layout_height="71dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="24dp"
+        android:onClick="openNatureSpots"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView8"
         app:srcCompat="@mipmap/natureresize" />
