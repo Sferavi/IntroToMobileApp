@@ -23,6 +23,7 @@ public class homeScreenActivity extends AppCompatActivity {
         Intent startFeedbackActivity = new Intent(this,FeedbackActivity.class);
         startActivity(startFeedbackActivity);
     }
+
     public void openEmergencyContacts (View view){
 
         Intent startEmergencyContactsActivity = new Intent(this,EmergencyContactsActivity.class);

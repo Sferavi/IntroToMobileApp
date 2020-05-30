@@ -5,7 +5,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
@@ -41,6 +44,9 @@ public class PostListViewAdapter extends BaseAdapter {
         Post post = postList.get(position);
         TextView itemTitle = convertView.findViewById(R.id.item_title);
         TextView itemBody = convertView.findViewById(R.id.item_body);
+        ImageView imageOfChoice = convertView.findViewById(R.id.image_of_choice);
+
+        Picasso.get().load(post.getUrl()).resize(150, 150).into(imageOfChoice);
 
         itemTitle.setText(post.getTitle());
         itemBody.setText(post.getBody());

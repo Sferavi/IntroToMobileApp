@@ -4,11 +4,13 @@ public class Post {
     private int id;
     private String title;
     private String body;
+    private String url;
 
-    public Post(int id, String title, String body) {
+    public Post(int id, String title, String body, String url) {
         this.id = id;
         this.title = title;
         this.body = body;
+        this.url = url;
     }
 
     public int getId() {
@@ -33,5 +35,12 @@ public class Post {
 
     public void setBody(String body) {
         this.body = body;
+    }
+    public String getUrl() {
+        return url;
+    }
+
+    public void setUrl(String url) {
+        this.url = url;
     }
 }

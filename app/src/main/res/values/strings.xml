@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">My Application</string>
+    <string name="app_name">ExpSa</string>
     <string name="namePerson">Name</string>
     <string name="surnamePerson">Surname</string>
     <string name="introText">" Please Enter The Following Information"</string>
@@ -29,4 +29,10 @@
     <string name="policeContact">Police</string>
     <string name="ambulanceContacts">Ambulance</string>
     <string name="firefighterContacts">Firefighters</string>
+    <string name="historyText">Brief History Lesson on Sarajevo</string>
+    <string name="feedbackInfoMessage">You provide us with feedback, we provide you with results!</string>
+    <string name="emailForFeedback">Please Enter Your Email Address</string>
+    <string name="nameForFeedback">Please Enter Your Full Name</string>
+    <string name="actualFeedback">Write Your Feedback Here..</string>
+    <string name="sendFeedback">Send Feedback</string>
 </resources>

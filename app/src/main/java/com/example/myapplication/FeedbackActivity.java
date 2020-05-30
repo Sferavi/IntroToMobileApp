@@ -3,45 +3,62 @@ package com.example.myapplication;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import java.util.List;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
+
 public class FeedbackActivity extends AppCompatActivity {
-    Button a, b, c, d, e, f, g, h;
-    EditText e1;
+    private EditText email,name,body;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_feedback);
+        email = findViewById(R.id.emailForFeedback);
+        name = findViewById(R.id.nameForFeedback);
+        body = findViewById(R.id.actualFeedback);
+    }
+    public void sendFeedback (View view){
+        Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl("https://my-json-server.typicode.com/Sferavi%20/json-placeholder/")
+                .addConverterFactory(GsonConverterFactory.create())
+                .build();
 
-        a = (Button) findViewById(R.id.radioButton1);
-        b = (Button) findViewById(R.id.radioButton2);
-        c = (Button) findViewById(R.id.radioButton3);
-        d = (Button) findViewById(R.id.radioButton4);
-        e = (Button) findViewById(R.id.radioButton5);
-        f = (Button) findViewById(R.id.radioButton6);
-        g = (Button) findViewById(R.id.radioButton7);
-        h = (Button) findViewById(R.id.feedbackButton);
-        h.setOnClickListener(new View.OnClickListener() {
+        GitHubApiService service = retrofit.create(GitHubApiService.class);
+        Feedback feedback = new Feedback(1,email.getText().toString(),name.getText().toString(),body.getText().toString());
+        Call<Feedback> listCall = service.addFeedback(feedback);
+        listCall.enqueue(new Callback<Feedback>() {
             @Override
-            public void onClick(View v) {
-                Intent i = new Intent(Intent.ACTION_SENDTO);
-                i.setData(Uri.parse("mailto:djcobrica@gmail.com"));
-                i.putExtra(Intent.EXTRA_SUBJECT, "Feedback from App");
-                i.putExtra(Intent.EXTRA_TEXT, "Feedback message : " + e1.getText());
-                try {
-                    startActivity(Intent.createChooser(i, "Send feedback..."));
-                } catch (android.content.ActivityNotFoundException ex) {
-                    Toast.makeText(getApplicationContext(), "There are no email clients installed.", Toast.LENGTH_SHORT).show();
+            public void onResponse(Call<Feedback> call, Response<Feedback> response) {
+                if (response.isSuccessful()) {
+                    Toast.makeText(FeedbackActivity.this,"Feedback has been submited",Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(FeedbackActivity.this,FeedbackActivity.class);
+                    startActivity(intent);
+
+
+                } else {
+
                 }
             }
+
+            @Override
+            public void onFailure(Call<Feedback> call, Throwable t) {
+                t.printStackTrace();
+            }
+
+
         });
+
+
+
     }
 }
-
-
