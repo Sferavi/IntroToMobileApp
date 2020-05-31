@@ -49,7 +49,7 @@ public class EmergencyContactsActivity extends AppCompatActivity {
     }
     public void firefightersDial(View view) {
         Intent firefighters = new Intent(Intent.ACTION_DIAL);
-        firefighters.setData(Uri.parse("tel:124"));
+        firefighters.setData(Uri.parse("tel:123"));
         if (ActivityCompat.checkSelfPermission(this, Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
 
             return;

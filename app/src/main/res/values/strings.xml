@@ -35,4 +35,5 @@
     <string name="nameForFeedback">Please Enter Your Full Name</string>
     <string name="actualFeedback">Write Your Feedback Here..</string>
     <string name="sendFeedback">Send Feedback</string>
+    <string name="homeFromFeedback">Home Page</string>
 </resources>

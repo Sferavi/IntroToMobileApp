@@ -46,7 +46,7 @@ public class PostListViewAdapter extends BaseAdapter {
         TextView itemBody = convertView.findViewById(R.id.item_body);
         ImageView imageOfChoice = convertView.findViewById(R.id.image_of_choice);
 
-        Picasso.get().load(post.getUrl()).resize(150, 150).into(imageOfChoice);
+        Picasso.get().load(post.getUrl()).resize(200, 200).into(imageOfChoice);
 
         itemTitle.setText(post.getTitle());
         itemBody.setText(post.getBody());

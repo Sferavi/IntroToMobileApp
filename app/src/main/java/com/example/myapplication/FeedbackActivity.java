@@ -27,6 +27,12 @@ public class FeedbackActivity extends AppCompatActivity {
         name = findViewById(R.id.nameForFeedback);
         body = findViewById(R.id.actualFeedback);
     }
+    public void openHomeFromFeedback (View view){
+
+        Intent starthomeScreenActivity = new Intent(this,homeScreenActivity.class);
+        startActivity(starthomeScreenActivity);
+    }
+
     public void sendFeedback (View view){
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl("https://my-json-server.typicode.com/Sferavi%20/json-placeholder/")
